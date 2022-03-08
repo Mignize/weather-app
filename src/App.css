@@ -1,0 +1,24 @@
+.sunset {
+  background-color: #fc9842;
+  background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.sky {
+  background: #2980b9;
+  background: linear-gradient(to right, #ffffff, #6dd5fa, #2980b9);
+}
+
+.night {
+  background: #01162e;
+  background: linear-gradient(
+    to right,
+    #01162e,
+    #001d37,
+    #002746,
+    #013155,
+    #003a63,
+    #01426d
+  );
+}
