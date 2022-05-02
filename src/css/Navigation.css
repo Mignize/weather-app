@@ -1,59 +1,30 @@
-nav {
-    background: #222222;
-    padding: 10px 40px 10px 70px;
-    border: 1px solid #000;
-    border-left: none;
-    border-right: none;
+.nav {
+  background: #222222;
+  height: 70px;
+  padding: 10px 30px 10px 20px;
+  border-left: none;
+  border-right: none;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.nav ul a.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+@media (max-width: 840px) {
+  .nav {
+    padding: 10px 0px 10px 20px;
   }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  .nav ul a.logo {
+    font-size: 20px;
   }
-  
-  nav ul a.logo {
-    flex: 1;
-    font-size: 30px;
-    font-weight: 700;
-    color: #f2f2f2;
-    text-decoration: none;
-  }
-  nav ul .search-container {
-    height: 40px;
-    width: 240px;
-    display: flex;
-    background: #f2f2f2;
-    border-radius: 5px;
-  }
-  
-  nav ul .search-container input {
-    height: 100%;
-    width: 200px;
-    border: none;
-    outline: none;
-    padding: 0 10px;
-    color: #000;
-    font-size: 16px;
-    border-radius: 5px 0 0 5px;
-  }
-  
-  nav ul .search-container .icon {
-    height: 100%;
-    width: 40px;
-    line-height: 40px;
-    text-align: center;
-    border: 1px solid #cccccc;
-    border-radius: 0 5px 5px 0;
-  }
-  
-  nav ul .search-container .icon:hover {
-      background: #e6e6e6e6;
-  }
-  
-  nav ul .search-container .icon span {
-      color: #222222;
-      font-size: 18px;
-  }
+}

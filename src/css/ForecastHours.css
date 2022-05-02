@@ -1,0 +1,158 @@
+.date {
+  padding: 20px;
+  font-size: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+}
+
+.container-weather-hours {
+  overflow: auto;
+  width: 100%;
+  max-height: 680px;
+}
+
+.name-city {
+  margin-left: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.container-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-hour {
+  margin-left: 20px;
+  flex: 0 0 100px;
+}
+
+.icon-condition {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.container-information-dropdown {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.container-condition-dropdown {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  padding-right: 5px;
+}
+
+.weather-temperature {
+  flex: 0 0 200px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.information-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.rain-percentage {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  min-width: 80px;
+}
+
+.wind-speed {
+  min-width: 125px;
+  margin-left: 10px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.wind-icon {
+  margin-right: 5px;
+  font-size: 20px;
+  color: #00ffff;
+}
+
+.icon-dropdown-weather {
+  font-size: 30px;
+  color: #00b3ff;
+}
+
+#dropdown-23 {
+  border: none;
+}
+
+.container-more-information-dropdown {
+  margin: 5px 30px;
+  padding: 15px;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.more-information-container {
+  display: flex;
+  width: 33.3%;
+  padding: 0 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  align-items: flex-start;
+}
+
+.icon-more-information-dropdown {
+  margin-right: 10px;
+  color: #00ffff;
+  font-size: 20px;
+}
+
+.more-information-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.value-more-information-dropdown {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.icon-humidity {
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+
+.container-weather-hours::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.container-weather-hours::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+.container-weather-hours::-webkit-scrollbar-button:increment,
+.container-weather-hours::-webkit-scrollbar-button {
+  display: none;
+}
+
+.container-weather-hours::-webkit-scrollbar-thumb {
+  background-color: #01162e;
+  border-radius: 15px;
+  border: 1px solid #fff;
+}
+
+.container-weather-hours::-webkit-scrollbar-track {
+  border-radius: 10px;
+}

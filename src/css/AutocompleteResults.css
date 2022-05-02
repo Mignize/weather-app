@@ -1,0 +1,25 @@
+.autocomplete-results {
+  width: 100%;
+  position: absolute;
+  margin-top: 5px;
+  border-radius: 5px;
+  background: #fff;
+  max-width: 400px;
+  max-height: 350px;
+  min-width: 70px;
+  overflow-y: auto;
+}
+
+.autocomplete-results button {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 3px;
+  text-align: start;
+}
+
+.autocomplete-results button:hover {
+  background: #ccc;
+}

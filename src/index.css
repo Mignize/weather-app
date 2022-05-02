@@ -6,4 +6,17 @@
 
 body {
   font-family: sans-serif;
+  background: linear-gradient(
+    to right,
+    #01162e,
+    #001d37,
+    #002746,
+    #013155,
+    #003a63,
+    #01426d
+  );
+}
+
+.hidden {
+  display: none !important;
 }

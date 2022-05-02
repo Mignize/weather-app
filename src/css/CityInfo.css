@@ -1,0 +1,16 @@
+.container-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.city-info {
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+.icon-small {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;
+}

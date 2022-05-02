@@ -1,0 +1,67 @@
+.container-weather-days {
+  margin: 10px 20px;
+  flex-wrap: wrap;
+  display: flex;
+  height: 215px;
+}
+
+.container-information-day {
+  width: 45%;
+  margin-right: 20px;
+}
+
+.container-information-night {
+  width: 45%;
+  margin-left: 20px;
+}
+
+.conditions-information-days {
+    display: flex;
+    align-items: center;
+}
+
+.temperature-information-days {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.percentage-rain-days {
+    display: flex;
+    align-items: center;
+}
+
+.weather-information-days {
+    margin-left: auto;
+}
+
+.container-more-information-days {
+    margin: 15px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.container-information-days {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.more-information-days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.value-more-information-days {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.margin-top-days {
+    margin-top: 5px;
+}

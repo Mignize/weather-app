@@ -1,0 +1,52 @@
+.recent-search {
+  width: 100%;
+  background: #fff;
+  margin-top: 5px;
+  border-radius: 5px;
+  max-width: 400px;
+  min-width: 90px;
+  max-height: 350px;
+  position: absolute;
+}
+
+.text-exist {
+  padding: 15px;
+  font-size: 15px;
+}
+
+.text-recent {
+  width: 100%;
+  max-width: 400px;
+  font-size: 20px;
+  border-bottom: 3px solid #ccc;
+  padding: 10px;
+}
+
+.recent-results {
+  display: flex;
+  align-items: center;
+  padding: 15px 0px 15px 15px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.recent-results span {
+  margin-right: 20px;
+}
+
+.recent-results:hover {
+  background: #92c8e0;
+}
+
+.container-name-region {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-icon {
+  width: 35px;
+}
+
+.region {
+  color: rgba(0, 0, 0, 0.6);
+}
