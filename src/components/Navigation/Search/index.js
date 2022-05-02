@@ -5,12 +5,9 @@ import "../../../css/Search.css";
 import getSearchResults from "../../../services/autocompleteSearch";
 import RecentResults from "./RecentResults";
 import AutocompleteResults from "./AutocompleteResults";
-import { useTranslation } from "react-i18next";
 
 const Search = (props) => {
   const [searchResults, setSearchResults] = useState("");
-
-  const { t } = useTranslation("global");
 
   const [visible, setVisible] = useState(false);
 
@@ -79,7 +76,7 @@ const Search = (props) => {
         <input
           ref={input}
           type="search"
-          placeholder={t("search")}
+          placeholder="search"
           onChange={ResultsSearch}
           onClick={addVisible}
         ></input>

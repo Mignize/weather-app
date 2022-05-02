@@ -45,8 +45,11 @@ function App() {
   useEffect(() => {
     const saveLocation = async () => {
       const cookieLocation = cookies.get("location");
+      if (cookieLocation) {
+        setLocation(cookieLocation);
+      }
       if (!cookieLocation) {
-        if (userLocation) {
+        if (userLocation && !otherLocation) {
           const coords = await getCountryByCoords(userLocation);
           const information = await getInformationAboutCountryByCode(
             coords[0].country
@@ -75,6 +78,7 @@ function App() {
         }
       }
     };
+
     saveLocation();
   }, [otherLocation, userLocation]);
 
@@ -99,22 +103,18 @@ function App() {
           </I18nextProvider>
         </LanguageContextProvider>
       ) : (
-        <LanguageContextProvider>
-          <I18nextProvider i18n={i18next}>
-            <ScalesContextProvider>
-              <WeatherDaysContextProvider>
-                <WeatherHourContextProvider>
-                  <RequestCity
-                    otherLocation={otherLocation}
-                    setOtherLocation={setOtherLocation}
-                    userLocation={userLocation}
-                    setUserLocation={setUserLocation}
-                  ></RequestCity>
-                </WeatherHourContextProvider>
-              </WeatherDaysContextProvider>
-            </ScalesContextProvider>
-          </I18nextProvider>
-        </LanguageContextProvider>
+        <ScalesContextProvider>
+          <WeatherDaysContextProvider>
+            <WeatherHourContextProvider>
+              <RequestCity
+                otherLocation={otherLocation}
+                setOtherLocation={setOtherLocation}
+                userLocation={userLocation}
+                setUserLocation={setUserLocation}
+              ></RequestCity>
+            </WeatherHourContextProvider>
+          </WeatherDaysContextProvider>
+        </ScalesContextProvider>
       )}
     </>
   );
