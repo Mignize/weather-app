@@ -5,7 +5,7 @@ const getSearchResults = async (search) => {
   try {
     const data = await axios.get(
       settings.BASE_URL_API_WEATHER +
-        `search.json?key=${settings.KEY_WEATHER}&q=${search}`
+        `search.json?key=${settings.API_WEATHER_KEY}&q=${search}`
     );
     return data;
   } catch (err) {

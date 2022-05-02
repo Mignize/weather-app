@@ -5,6 +5,7 @@
   width: 100%;
   font-weight: bold;
   display: flex;
+  align-items: center;
 }
 
 .container-weather-hours {

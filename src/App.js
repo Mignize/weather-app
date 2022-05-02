@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { findIpAndLocation } from "./services/searchLocation";
 
 import cookies from "./cookie";
 import WeatherContent from "./components/Weather/index";
@@ -16,6 +15,12 @@ import globalEs from "./translations/es/global.json";
 
 import globalEn from "./translations/en/global.json";
 import { LanguageContextProvider } from "./context/languageContext";
+import RequestCity from "./components/RequestCity/index";
+
+import {
+  getCountryByCoords,
+  getInformationAboutCountryByCode,
+} from "./services/searchLocation";
 
 function App() {
   i18next.init({
@@ -31,45 +36,86 @@ function App() {
     },
   });
 
+  const [otherLocation, setOtherLocation] = useState("");
+
+  const [userLocation, setUserLocation] = useState("");
+
+  const [location, setLocation] = useState("");
+
   useEffect(() => {
     const saveLocation = async () => {
       const cookieLocation = cookies.get("location");
       if (!cookieLocation) {
-        const location = await findIpAndLocation();
-        cookies.set(
-          "location",
-          {
-            country: location.country_name,
-            countryCode: location.country_code,
-            capital: location.location.capital,
-            city: location.city,
-          },
-          { maxAge: 60 * 60 * 24 * 30 }
-        );
+        if (userLocation) {
+          const coords = await getCountryByCoords(userLocation);
+          const information = await getInformationAboutCountryByCode(
+            coords[0].country
+          );
+          const locationInformation = {
+            country: information[0].name.common,
+            countryCode: coords[0].country,
+            capital: information[0].capital[0],
+            city: coords[0].name,
+          };
+          setLocation(locationInformation);
+          cookies.set("location", locationInformation, {
+            maxAge: 60 * 60 * 24 * 30,
+          });
+        } else if (!userLocation && otherLocation) {
+          const locationInformation = {
+            country: otherLocation.countryName,
+            countryCode: otherLocation.countryCode,
+            capital: otherLocation.capital,
+            city: otherLocation.city,
+          };
+          setLocation(locationInformation);
+          cookies.set("location", locationInformation, {
+            maxAge: 60 * 60 * 24 * 30,
+          });
+        }
       }
     };
     saveLocation();
-  }, []);
+  }, [otherLocation, userLocation]);
 
   const [language, setLanguage] = useState("en");
 
   return (
     <>
-      <LanguageContextProvider>
-        <I18nextProvider i18n={i18next}>
-          <ScalesContextProvider>
-            <WeatherDaysContextProvider>
-              <WeatherHourContextProvider>
-                <Navigation
-                  language={language}
-                  setLanguage={setLanguage}
-                ></Navigation>
-                <WeatherContent></WeatherContent>
-              </WeatherHourContextProvider>
-            </WeatherDaysContextProvider>
-          </ScalesContextProvider>
-        </I18nextProvider>
-      </LanguageContextProvider>
+      {location ? (
+        <LanguageContextProvider>
+          <I18nextProvider i18n={i18next}>
+            <ScalesContextProvider>
+              <WeatherDaysContextProvider>
+                <WeatherHourContextProvider>
+                  <Navigation
+                    language={language}
+                    setLanguage={setLanguage}
+                  ></Navigation>
+                  <WeatherContent></WeatherContent>
+                </WeatherHourContextProvider>
+              </WeatherDaysContextProvider>
+            </ScalesContextProvider>
+          </I18nextProvider>
+        </LanguageContextProvider>
+      ) : (
+        <LanguageContextProvider>
+          <I18nextProvider i18n={i18next}>
+            <ScalesContextProvider>
+              <WeatherDaysContextProvider>
+                <WeatherHourContextProvider>
+                  <RequestCity
+                    otherLocation={otherLocation}
+                    setOtherLocation={setOtherLocation}
+                    userLocation={userLocation}
+                    setUserLocation={setUserLocation}
+                  ></RequestCity>
+                </WeatherHourContextProvider>
+              </WeatherDaysContextProvider>
+            </ScalesContextProvider>
+          </I18nextProvider>
+        </LanguageContextProvider>
+      )}
     </>
   );
 }

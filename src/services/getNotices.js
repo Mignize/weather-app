@@ -11,7 +11,7 @@ const getNotices = async (language) => {
   try {
     const data = await axios.get(
       settings.BASE_URL_API_NOTICE +
-        `?access_key=${settings.API_ACESS_KEY_NOTICE}&search=${content}&keywords=${content}&languages=${language}&limit=40`
+        `?access_key=${settings.API_ACESS_NOTICE_KEY}&search=${content}&keywords=${content}&languages=${language}&limit=40`
     );
     return data;
   } catch (err) {

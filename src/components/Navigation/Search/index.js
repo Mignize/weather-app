@@ -5,11 +5,12 @@ import "../../../css/Search.css";
 import getSearchResults from "../../../services/autocompleteSearch";
 import RecentResults from "./RecentResults";
 import AutocompleteResults from "./AutocompleteResults";
-
 import { useTranslation } from "react-i18next";
 
-const Search = () => {
+const Search = (props) => {
   const [searchResults, setSearchResults] = useState("");
+
+  const { t } = useTranslation("global");
 
   const [visible, setVisible] = useState(false);
 
@@ -20,8 +21,6 @@ const Search = () => {
   const container = useRef(null);
 
   const label = useRef(null);
-
-  const [t] = useTranslation("global");
 
   const ResultsSearch = async (e) => {
     if (e.target.value.length >= 3) {
@@ -57,9 +56,14 @@ const Search = () => {
 
   if (visible && searchResults) {
     searchResult = (
-      <AutocompleteResults searchResults={searchResults}></AutocompleteResults>
+      <AutocompleteResults
+        searchResults={searchResults}
+        country={props.country}
+        setCountry={props.setCountry}
+        setCity={props.setCity}
+      ></AutocompleteResults>
     );
-  } else if (visible && !searchResults) {
+  } else if (visible && !searchResults && !props.withoutLocation) {
     searchResult = (
       <div className="recent-search">
         <RecentResults></RecentResults>

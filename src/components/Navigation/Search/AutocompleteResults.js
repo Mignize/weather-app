@@ -7,6 +7,7 @@ import {
   getWeatherOfDays,
 } from "../../../services/weatherData";
 import { useContextWeatherDays } from "../../../context/weatherDaysContext";
+import cookies from "../../../cookie";
 
 const AutocompleteResults = (props) => {
   const weatherHourContext = useContextWeatherHour();
@@ -14,8 +15,13 @@ const AutocompleteResults = (props) => {
   const weatherDaysContext = useContextWeatherDays();
 
   const getWeather = async (city) => {
+    const location = cookies.get("location");
     const weatherHourData = await getWeatherForHour(city);
     const weatherDaysData = await getWeatherOfDays(city);
+    if (!props.country && !location) {
+      props.setCountry(weatherHourData.location.country);
+      props.setCity(city);
+    }
     weatherHourContext.setWeatherHour(weatherHourData);
     weatherDaysContext.setWeatherDays(weatherDaysData);
     const search = localStorage.getItem("searchs");
