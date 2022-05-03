@@ -16,16 +16,18 @@ const ForecastThreeDays = () => {
         {t("forecastForThreeDays")}
         <div className="name-city">- {` ${weatherDays.location.name}`}</div>
       </div>
-      {weatherDays
-        ? weatherDays.forecast.forecastday.map((information, index) => {
-            return (
-              <InformationWeatherDays
-                information={information}
-                key={index}
-              ></InformationWeatherDays>
-            );
-          })
-        : ""}
+      <div className="scroll">
+        {weatherDays
+          ? weatherDays.forecast.forecastday.map((information, index) => {
+              return (
+                <InformationWeatherDays
+                  information={information}
+                  key={index}
+                ></InformationWeatherDays>
+              );
+            })
+          : ""}
+      </div>
     </div>
   );
 };

@@ -27,7 +27,9 @@
 
 .weather-hour {
   margin-left: 20px;
-  flex: 0 0 100px;
+  max-width: 100px;
+  width: 100%;
+  margin-right: 5px;
 }
 
 .icon-condition {
@@ -53,7 +55,8 @@
 }
 
 .weather-temperature {
-  flex: 0 0 200px;
+  max-width: 200px;
+  width: 100%;
   font-size: 1.25rem;
   font-weight: bold;
 }
@@ -86,6 +89,7 @@
 
 .icon-dropdown-weather {
   font-size: 30px;
+  min-width: 30px;
   color: #00b3ff;
 }
 
@@ -94,10 +98,11 @@
 }
 
 .container-more-information-dropdown {
-  margin: 5px 30px;
+  margin: 5px 10px;
   padding: 15px;
   flex-wrap: wrap;
   display: flex;
+  justify-content: center;
 }
 
 .more-information-container {
@@ -105,13 +110,15 @@
   width: 33.3%;
   padding: 0 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon-more-information-dropdown {
   margin-right: 10px;
   color: #00ffff;
   font-size: 20px;
+  min-width: 20px;
 }
 
 .more-information-dropdown {
@@ -133,6 +140,7 @@
 .icon-humidity {
   font-size: 30px;
   padding-bottom: 5px;
+  min-width: 30px;
 }
 
 .container-weather-hours::-webkit-scrollbar {
@@ -156,4 +164,43 @@
 
 .container-weather-hours::-webkit-scrollbar-track {
   border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .rain-percentage {
+    min-width: 50px;
+    font-size: 0.725rem;
+  }
+
+  .wind-speed {
+    min-width: 50px;
+    font-size: 0.725rem;
+    margin-left: 0px;
+    padding-right: 0px;
+  }
+  .text-condition {
+    font-size: 0.725rem;
+  }
+
+  .weather-temperature {
+    font-size: 0.825rem;
+  }
+
+  .weather-hour {
+    font-size: 0.725rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .container-weather-hours {
+    max-height: 780px;
+  }
+
+  .more-information-container {
+    width: 45%;
+  }
+
+  .icon-condition {
+    width: 25px;
+  }
 }

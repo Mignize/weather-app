@@ -43,6 +43,7 @@ const ForecastHours = (props) => {
               <DropdownInformation
                 information={information}
                 key={index}
+                index={index}
                 hour={hour}
                 textCondition={textCondition}
               ></DropdownInformation>

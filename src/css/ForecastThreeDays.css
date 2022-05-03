@@ -16,52 +16,106 @@
 }
 
 .conditions-information-days {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .temperature-information-days {
-    font-size: 30px;
-    font-weight: bold;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .percentage-rain-days {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .weather-information-days {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .container-more-information-days {
-    margin: 30px;
-    flex-wrap: wrap;
-    display: flex;
+  margin: 30px;
+  flex-wrap: wrap;
+  display: flex;
 }
 
 .container-information-days {
-    width: 50%;
-    display: flex;
-    justify-content: center;
+  width: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 .more-information-days {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
 }
 
 .value-more-information-days {
-    margin-top: 5px;
-    font-weight: bold;
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 .border-bottom {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .margin-top-days {
-    margin-top: 5px;
+  margin-top: 5px;
+}
+.scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.scroll::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+.scroll::-webkit-scrollbar-button:increment,
+.scroll::-webkit-scrollbar-button {
+  display: none;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #01162e;
+  border-radius: 15px;
+  border: 1px solid #fff;
+}
+
+.scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.scroll {
+  overflow: auto;
+  height: 750px;
+}
+
+@media (max-width: 660px) {
+  .container-information-day {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .container-information-night {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .container-weather-days {
+    height: 500px;
+  }
+
+  .scroll {
+    overflow: auto;
+    height: 680px;
+  }
+}
+
+@media (max-width: 500px) {
+  .scroll {
+    overflow: auto;
+    height: 775px;
+  }
 }

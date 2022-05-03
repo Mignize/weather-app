@@ -6,10 +6,23 @@ import getSearchResults from "../../../services/autocompleteSearch";
 import RecentResults from "./RecentResults";
 import AutocompleteResults from "./AutocompleteResults";
 
+import { useContextWeatherHour } from "../../../context/weatherHourContext";
+import {
+  getWeatherForHour,
+  getWeatherOfDays,
+} from "../../../services/weatherData";
+import { useContextWeatherDays } from "../../../context/weatherDaysContext";
+
+import cookies from "../../../cookie";
+
 const Search = (props) => {
   const [searchResults, setSearchResults] = useState("");
 
   const [visible, setVisible] = useState(false);
+
+  const weatherHourContext = useContextWeatherHour();
+
+  const weatherDaysContext = useContextWeatherDays();
 
   const input = useRef(null);
 
@@ -34,6 +47,51 @@ const Search = (props) => {
     setVisible(true);
   };
 
+  const getWeather = async (city) => {
+    const location = cookies.get("location");
+    const weatherHourData = await getWeatherForHour(city);
+    const weatherDaysData = await getWeatherOfDays(city);
+    if (!props.country && !location) {
+      props.setCountry(weatherHourData.location.country);
+      props.setCity(city);
+    }
+    weatherHourContext.setWeatherHour(weatherHourData);
+    weatherDaysContext.setWeatherDays(weatherDaysData);
+    const search = localStorage.getItem("searchs");
+    if (!search) {
+      localStorage.setItem(
+        "searchs",
+        JSON.stringify([{ name: weatherHourData.location.name }])
+      );
+    }
+    const data = JSON.parse(search);
+    if (search && data.length < 3) {
+      for (let i = 0; i <= data.length - 1; i++) {
+        if (data[i].name === weatherHourData.location.name) {
+          return "";
+        }
+      }
+      data.push({ name: weatherHourData.location.name });
+      localStorage.setItem("searchs", JSON.stringify(data));
+    }
+    if (search && data.length >= 3) {
+      data.shift();
+      for (let i = 0; i <= data.length - 1; i++) {
+        if (data[i].name === weatherHourData.location.name) {
+          return "";
+        }
+      }
+      data.push({ name: weatherHourData.location.name });
+      localStorage.setItem("searchs", JSON.stringify(data));
+    }
+  };
+
+  const search = async (city) => {
+    if (city.length > 3) {
+      await getWeather(city);
+    }
+  };
+
   const removeVisible = (e) => {
     const clic = e.target;
     const pathThree = e.path[2];
@@ -47,7 +105,13 @@ const Search = (props) => {
     }
   };
 
-  const search = (city) => {};
+  const handleKeyDown = async (event) => {
+    if (event.key === "Enter") {
+      if (input.current.value.length > 3) {
+        await getWeather(input.current.value);
+      }
+    }
+  };
 
   let searchResult = "";
 
@@ -79,11 +143,14 @@ const Search = (props) => {
           placeholder="search"
           onChange={ResultsSearch}
           onClick={addVisible}
+          onKeyDown={handleKeyDown}
         ></input>
         <label className="icon" ref={label}>
           <button
             className="button-search"
-            onClick={!visible ? addVisible : () => search(input.current)}
+            onClick={
+              !visible ? addVisible : () => search(input.current.value)
+            }
             ref={button}
           >
             <FaSearch></FaSearch>

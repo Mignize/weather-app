@@ -4,7 +4,7 @@
   margin-top: 5px;
   border-radius: 5px;
   max-width: 400px;
-  min-width: 90px;
+  min-width: 170px;
   max-height: 350px;
   position: absolute;
 }
@@ -49,4 +49,17 @@
 
 .region {
   color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 576px) {
+  .text-recent {
+    font-size: 15px;
+  }
+
+  .recent-results {
+    padding: 10px 0px 10px 10px
+  }
+  .region {
+    font-size: 0.825rem;
+  }
 }

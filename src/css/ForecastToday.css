@@ -59,7 +59,7 @@
 .more-information {
   display: flex;
   flex: 0 0 auto;
-  width: 49%;
+  width: 48%;
   border-top: 1px solid gray;
   padding: 10px 15px;
 }
@@ -84,7 +84,7 @@
 }
 
 .weather-times {
-  width: 20%;
+  width: 30%;
 }
 
 .container-weather-times-information {
@@ -130,4 +130,46 @@
 .rain-icon {
   color: #00ffff;
   font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .description-weather-info {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .text-times {
+    font-size: 1rem;
+  }
+  .temperature-times {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .more-information {
+    width: 100%;
+  }
+  .margin-left {
+    margin-left: 0px;
+  }
+  .margin-right {
+    margin-right: 0px;
+  }
+
+  .text-times {
+    font-size: 0.75rem;
+  }
+  .temperature-times {
+    font-size: 0.75rem;
+  }
+
+  .description-weather-info {
+    font-size: 1.25rem;
+  }
+
+  .more-information div {
+    font-size: 0.825rem;
+  }
 }

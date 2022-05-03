@@ -1,14 +1,14 @@
 .wrapper {
   flex-wrap: wrap;
   display: flex;
-  height: 88vh;
+  height: 750px;
 }
 
 .weather-info {
   flex: 0 0 auto;
   width: 60%;
   display: flex;
-  justify-content: flex-end;
+  height: 100%;
 }
 
 .notice-climate {
@@ -18,12 +18,9 @@
 }
 
 .weather-info .container {
-  margin: auto;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin: 20px;
   width: 100%;
-  max-width: 950px;
-  height: 750px;
+  height: 100%;
   background: #01416c7e;
   border: rgba(255, 255, 255, 0.479) solid 1px;
   border-radius: 15px;
@@ -31,11 +28,8 @@
 }
 
 .notice-climate .container {
-  margin: auto;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin: 20px;
   width: 100%;
-  max-width: 600px;
   height: 750px;
   color: #fff;
 }
@@ -86,5 +80,38 @@
 
   .notice-climate .container {
     max-width: 800px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .weather-info {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    margin: 20px 0px;
+  }
+
+  .notice-climate {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    margin: 20px 0px;
+    height: 815px;
+  }
+}
+
+@media (max-width: 576px) {
+  .notice-climate {
+    height: 1575px;
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    height: 850px;
+  }
+
+  .notice-climate {
+    height: 1575px;
   }
 }

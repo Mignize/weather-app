@@ -6,9 +6,10 @@
 }
 
 .btn-permissions {
-  height: 50px;
-  width: 250px;
+  min-height: 50px;
+  max-width: 250px;
   margin-left: 30px;
+  margin-right: 30px;
   cursor: pointer;
   color: #000;
   border-radius: 15px;
@@ -32,9 +33,9 @@
 }
 
 .text-request {
-  font-size: 2rem;
+  font-size: 1rem;
   color: #fff;
-  margin-bottom: 20px;
+  margin: 20px;
   font-weight: bold;
 }
 
@@ -47,4 +48,11 @@
   color: #fff;
   font-size: 2rem;
   margin: 10px;
+}
+
+@media (max-width: 500px) {
+  .request {
+    flex-flow: column-reverse;
+    margin: 0 20px;
+  }
 }

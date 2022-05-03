@@ -9,11 +9,11 @@
   color: #fff;
   margin-top: 5px;
   text-decoration: none;
-  width: 48.3%;
+  width: 47.6%;
 }
 
 .notice-title {
-  font-size: 15px;
+  font-size: 0.75rem;
   margin-left: 5px;
   margin-right: 5px;
   text-decoration: none;
@@ -38,7 +38,7 @@
 }
 
 .source {
-  font-size: 15px;
+  font-size: 0.75rem;
   margin: 5px;
 }
 
@@ -78,4 +78,53 @@
 #number5 {
   border-bottom: none;
   margin-left: 10px;
+}
+
+@media (max-width: 1200px) {
+  .container-notice {
+    width: 48%;
+  }
+
+  .source {
+    font-size: 1rem;
+  }
+  .notice-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-notice {
+    width: 100%;
+  }
+
+  #number0 {
+    margin-top: 10px;
+    margin-right: 0px;
+  }
+
+  #number1 {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+
+  #number2 {
+    margin-top: 10px;
+    margin-right: 0px;
+  }
+
+  #number3 {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+
+  #number4 {
+    margin-top: 10px;
+    margin-right: 0px;
+  }
+
+  #number5 {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
 }

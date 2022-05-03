@@ -8,6 +8,7 @@
   align-items: center;
   color: #fff;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .icon-dropdown {
@@ -35,8 +36,7 @@
   background: #01416c7e;
   border: rgba(255, 255, 255, 0.479) solid 1px;
   border-radius: 15px;
-  width: 100%;
-  border-radius: 5px;
+  width: 90%;
   position: absolute;
   color: #fff;
 }
@@ -58,6 +58,10 @@
   background: #92c8e0;
 }
 
+.container-bars-icon {
+  display: none;
+}
+
 .container-scales {
   display: flex;
 }
@@ -73,4 +77,15 @@
 .selector-description {
   margin-top: 5px;
   font-weight: bold;
+}
+
+@media (max-width: 510px) {
+  /* .container-selection-information {
+    display: none;
+  } */
+
+  .container-bars-icon {
+    display: flex;
+  }
+
 }
