@@ -47,6 +47,8 @@
   "visibility": "Visibilidad",
   "temperature": "Temperatura",
   "moonPhase": "Fase lunar",
+  "moonset": "Puesta de la luna",
+  "sunset": "Puesta del sol",
   "morning": "Mañana",
   "afternoon": "Tarde",
   "evening": "Noche",

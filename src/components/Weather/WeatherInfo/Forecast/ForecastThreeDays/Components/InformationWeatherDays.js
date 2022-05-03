@@ -33,7 +33,7 @@ const InformationWeatherDays = (props) => {
     <div className="container-weather-days">
       <div className="container-information-day">
         <div className="day">
-          {dayName} {dayNumber} | {t("day")}
+          {t(dayName)} {dayNumber} | {t("day")}
         </div>
         <div className="conditions-information-days">
           <div className="temperature-information-days">
@@ -125,7 +125,7 @@ const InformationWeatherDays = (props) => {
       </div>
       <div className="container-information-night">
         <div className="day">
-          {dayName} {dayNumber} | {t("night")}
+          {t(dayName)} {dayNumber} | {t("night")}
         </div>
         <div className="conditions-information-days">
           <div className="temperature-information-days">

@@ -47,6 +47,8 @@
   "visibility": "Visibility",
   "temperature": "Temperature",
   "moonPhase": "Moon phase",
+  "moonset": "Moonset",
+  "sunset": "Sunset",
   "morning": "Morning",
   "afternoon": "Afternoon",
   "evening": "Evening",
