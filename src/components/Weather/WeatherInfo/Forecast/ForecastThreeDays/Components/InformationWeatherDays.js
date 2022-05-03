@@ -17,6 +17,8 @@ const InformationWeatherDays = (props) => {
 
   const date = new Date(information.date);
 
+  date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+
   const dayNumber = date.getDate();
 
   const day = date.getDay();

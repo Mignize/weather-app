@@ -15,7 +15,7 @@ const ForecastHours = (props) => {
 
   const forecastFirstDay = forecastDay[0];
 
-  const date = new Date(forecastDay[0].date);
+  const date = new Date(Date.now());
 
   const dayNumber = date.getDate();
 

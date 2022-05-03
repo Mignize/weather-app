@@ -9,7 +9,7 @@ const GetSearchInformation = () => {
       const recentSearches = localStorage.getItem("searchs");
       const recentSearche = JSON.parse(recentSearches);
       let search = [];
-      if (!recentsSearch) {
+      if (!recentsSearch && recentSearche) {
         recentSearche.map(async (recent) => {
           const weather = await getWeatherData(recent.name);
           const data = {
