@@ -4,6 +4,7 @@ import "../../../css/NoticeClimate.css";
 
 import getNotices from "../../../services/getNotices";
 import { useContextLanguage } from "../../../context/languageContext";
+import cookies from "../../../cookie";
 
 const NoticeClimate = () => {
   const { language } = useContextLanguage();
@@ -12,14 +13,15 @@ const NoticeClimate = () => {
 
   useEffect(() => {
     const getNotice = async () => {
-      const notices = await getNotices(language);
+      const location = cookies.get("location");
+      const notices = await getNotices(language, location.countryCode);
       setNotices(notices);
     };
     getNotice();
   }, [language]);
   return (
     <div className="container">
-      {notices ? <Notices notices={notices.data.data}></Notices> : ""}
+      {notices ? <Notices notices={notices}></Notices> : ""}
     </div>
   );
 };
