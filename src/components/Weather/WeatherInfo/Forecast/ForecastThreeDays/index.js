@@ -1,9 +1,9 @@
 import React from "react";
-import "../../../../../css/ForecastThreeDays.css";
+import "css/ForecastThreeDays.css";
 import { useTranslation } from "react-i18next";
 
 import InformationWeatherDays from "./Components/InformationWeatherDays";
-import { useContextWeatherDays } from "../../../../../context/weatherDaysContext";
+import { useContextWeatherDays } from "context/weatherDaysContext";
 
 const ForecastThreeDays = () => {
   const { weatherDays } = useContextWeatherDays();

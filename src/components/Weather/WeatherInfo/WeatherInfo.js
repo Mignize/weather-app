@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import cookies from "../../../cookie";
+import cookies from "cookie.js";
 import {
   getWeatherForHour,
   getWeatherOfDays,
-} from "../../../services/weatherData";
+} from "services/weatherData";
 
-import LoadingScreen from "../../Loading/index";
-import { useContextWeatherHour } from "../../../context/weatherHourContext";
-import { useContextWeatherDays } from "../../../context/weatherDaysContext";
+import LoadingScreen from "components/Loading/index";
+import { useContextWeatherHour } from "context/weatherHourContext";
+import { useContextWeatherDays } from "context/weatherDaysContext";
 
-import { useContextScales } from "../../../context/scalesContext";
+import { useContextScales } from "context/scalesContext";
 import ForecastToday from "./Forecast/ForecastToday/index";
 import ForecastHours from "./Forecast/ForecastHours/index";
 

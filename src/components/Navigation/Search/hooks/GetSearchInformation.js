@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getWeatherData } from "../../../../services/weatherData";
+import { getWeatherData } from "services/weatherData";
 
 const GetSearchInformation = () => {
   const [recentsSearch, setRecentsSearch] = React.useState(null);

@@ -1,9 +1,3 @@
-.weather {
-  position: absolute;
-  width: 400px;
-  height: 500px;
-}
-
 .rainy:after {
   content: "";
   position: absolute;
@@ -48,4 +42,14 @@
     #fff 33px 6px 0 6px, #fff 61px 6px 0 2px, #ccc 29px -23px 0 6px,
     #ccc 64px -14px 0 2px, #ccc 94px -4px 0 -4px;
   z-index: 2;
+}
+
+@media (max-width: 1200px) {
+  .rainy:after {
+    left: 40%;
+  }
+
+  .rainy:before {
+    left: 40%;
+  }
 }

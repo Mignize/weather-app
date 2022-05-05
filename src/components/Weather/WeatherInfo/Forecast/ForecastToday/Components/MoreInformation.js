@@ -7,7 +7,7 @@ import { WiHumidity, WiMoonAltWaxingCrescent1 } from "react-icons/wi";
 import { CgCompressV } from "react-icons/cg";
 
 import { MdVisibility } from "react-icons/md";
-import { getTranslationForMoonPhase } from "../../../../../../services/index";
+import { getTranslationForMoonPhase } from "services/index";
 
 const MoreInformation = (props) => {
   const [t] = useTranslation("global");

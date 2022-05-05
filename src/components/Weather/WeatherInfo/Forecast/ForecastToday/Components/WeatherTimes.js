@@ -1,5 +1,5 @@
 import React from "react";
-import { getTranslationForCondition } from "../../../../../../services/index";
+import { getTranslationForCondition } from "services/index";
 import { useTranslation } from "react-i18next";
 
 import { WiRaindrop } from "react-icons/wi";

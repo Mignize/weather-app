@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useContextScales } from "../../../../../../context/scalesContext";
+import { useContextScales } from "context/scalesContext";
 
 import { WiRaindrop, WiHumidity } from "react-icons/wi";
 import { RiWindyLine, RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";

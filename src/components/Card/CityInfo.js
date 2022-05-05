@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useContextScales } from "../../context/scalesContext";
-import "../../css/CityInfo.css";
-import cookies from "../../cookie";
-import { getWeatherData } from "../../services/weatherData";
+import { useContextScales } from "context/scalesContext";
+import "css/CityInfo.css";
+import cookies from "cookie.js";
+import { getWeatherData } from "services/weatherData";
 
 const CityInfo = () => {
   const [countryWeather, setCountryWeather] = useState("");

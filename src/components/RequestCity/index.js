@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Search from "../Navigation/Search/index";
-import "../../css/RequestCity.css";
+import Search from "components/Navigation/Search/index";
+import "css/RequestCity.css";
 
-import { getInformationAboutCountry } from "../../services/searchLocation";
-import { findLocation } from "../../services/searchLocation";
+import { getInformationAboutCountry } from "services/searchLocation";
+import { findLocation } from "services/searchLocation";
 
 const RequestCity = (props) => {
   const [country, setCountry] = useState("");

@@ -1,13 +1,13 @@
 import React from "react";
-import "../../../css/AutocompleteResults.css";
-import { useContextWeatherHour } from "../../../context/weatherHourContext";
+import "css/AutocompleteResults.css";
+import { useContextWeatherHour } from "context/weatherHourContext";
 
 import {
   getWeatherForHour,
   getWeatherOfDays,
-} from "../../../services/weatherData";
-import { useContextWeatherDays } from "../../../context/weatherDaysContext";
-import cookies from "../../../cookie";
+} from "services/weatherData";
+import { useContextWeatherDays } from "context/weatherDaysContext";
+import cookies from "cookie.js";
 
 const AutocompleteResults = (props) => {
   const weatherHourContext = useContextWeatherHour();

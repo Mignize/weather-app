@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "App.css";
 
-import cookies from "./cookie";
-import WeatherContent from "./components/Weather/index";
-import Navigation from "./components/Navigation/index";
+import cookies from "cookie.js";
+import WeatherContent from "components/Weather/index";
+import Navigation from "components/Navigation/index";
 
-import { WeatherHourContextProvider } from "./context/weatherHourContext";
-import { ScalesContextProvider } from "./context/scalesContext";
-import { WeatherDaysContextProvider } from "./context/weatherDaysContext";
+import { WeatherHourContextProvider } from "context/weatherHourContext";
+import { ScalesContextProvider } from "context/scalesContext";
+import { WeatherDaysContextProvider } from "context/weatherDaysContext";
 
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
-import globalEs from "./translations/es/global.json";
+import globalEs from "translations/es/global.json";
 
-import globalEn from "./translations/en/global.json";
-import { LanguageContextProvider } from "./context/languageContext";
-import RequestCity from "./components/RequestCity/index";
+import globalEn from "translations/en/global.json";
+import { LanguageContextProvider } from "context/languageContext";
+import RequestCity from "components/RequestCity/index";
 
 import {
   getCountryByCoords,
   getInformationAboutCountryByCode,
-} from "./services/searchLocation";
+} from "services/searchLocation";
 
 function App() {
   i18next.init({

@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { getDay, getMonth } from "../../../../../services/getDates";
+import { getDay, getMonth } from "services/getDates";
 
-import "../../../../../css/ForecastHours.css";
+import "css/ForecastHours.css";
 import DropdownInformation from "./Components/DropdownInformation";
-import { getTranslationForCondition } from "../../../../../services/index";
+import { getTranslationForCondition } from "services/index";
 
 const ForecastHours = (props) => {
   const { weather } = props;

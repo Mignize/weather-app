@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "../../css/SelectorScalesTemperature.css";
-import cookies from "../../cookie";
+import "css/SelectorScalesTemperature.css";
+import cookies from "cookie.js";
 
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 import { FaGlobeAmericas } from "react-icons/fa";
-import { useContextScales } from "../../context/scalesContext";
+import { useContextScales } from "context/scalesContext";
 
 import { useTranslation } from "react-i18next";
-import { useContextLanguage } from "../../context/languageContext";
+import { useContextLanguage } from "context/languageContext";
 
 const SelectorScalesTemperature = (props) => {
   const [dropDown, setOpenDropDown] = useState(false);

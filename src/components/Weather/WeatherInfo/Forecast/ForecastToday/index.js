@@ -1,11 +1,11 @@
 import React from "react";
-import "../../../../../css/ForecastToday.css";
+import "css/ForecastToday.css";
 
 import { useTranslation } from "react-i18next";
 import {
   getTime,
   getTranslationForCondition,
-} from "../../../../../services/index";
+} from "services/index";
 
 import WeatherTimes from "./Components/WeatherTimes";
 import MoreInformation from "./Components/MoreInformation";

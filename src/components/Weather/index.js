@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../css/WeatherInfo.css";
+import "css/WeatherInfo.css";
 import NoticeClimate from "./NoticeClimate/NoticeClimate";
 
 import WeatherInfo from "./WeatherInfo/WeatherInfo";

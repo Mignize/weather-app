@@ -1,5 +1,5 @@
 import React from "react";
-import CityInfo from "../Card/CityInfo";
+import CityInfo from "components/Card/CityInfo";
 import { useTranslation } from "react-i18next";
 
 const ChooserPronostic = (props) => {

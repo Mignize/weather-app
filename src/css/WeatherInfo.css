@@ -18,7 +18,7 @@
 }
 
 .weather-info .container {
-  margin: 20px;
+  margin: 30px;
   width: 100%;
   height: 100%;
   background: #01416c7e;
@@ -28,7 +28,7 @@
 }
 
 .notice-climate .container {
-  margin: 20px;
+  margin: 30px;
   width: 100%;
   height: 750px;
   color: #fff;
@@ -112,6 +112,6 @@
   }
 
   .notice-climate {
-    height: 1575px;
+    height: 1600px;
   }
 }

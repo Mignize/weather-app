@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Notices from "./Components/Notices";
-import "../../../css/NoticeClimate.css";
+import "css/NoticeClimate.css";
 
-import getNotices from "../../../services/getNotices";
-import { useContextLanguage } from "../../../context/languageContext";
-import cookies from "../../../cookie";
+import getNotices from "services/getNotices";
+import { useContextLanguage } from "context/languageContext";
+import cookies from "cookie.js";
 
 const NoticeClimate = () => {
   const { language } = useContextLanguage();

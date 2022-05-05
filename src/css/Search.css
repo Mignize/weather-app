@@ -42,12 +42,3 @@
   right: 8px;
   transform: translateY(25%);
 }
-
-@media (max-width: 510px) {
-  .search-container input::placeholder {
-    color: transparent;
-  }
-  .search-container input {
-    color: transparent;
-  }
-}

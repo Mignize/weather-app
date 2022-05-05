@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "../../../css/RecentResults.css";
+import "css/RecentResults.css";
 import { useTranslation } from "react-i18next";
 
 import GetSearchInformation from "./hooks/GetSearchInformation";
 import {
   getWeatherForHour,
   getWeatherOfDays,
-} from "../../../services/weatherData";
-import { useContextScales } from "../../../context/scalesContext";
+} from "services/weatherData";
+import { useContextScales } from "context/scalesContext";
 
-import { useContextWeatherHour } from "../../../context/weatherHourContext";
-import { useContextWeatherDays } from "../../../context/weatherDaysContext";
+import { useContextWeatherHour } from "context/weatherHourContext";
+import { useContextWeatherDays } from "context/weatherDaysContext";
 
 const RecentResults = () => {
   const [items, setItems] = useState("");

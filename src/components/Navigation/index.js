@@ -1,7 +1,7 @@
 import React from "react";
-import "../../css/Navigation.css";
+import "css/Navigation.css";
 import Search from "./Search/index";
-import SelectorScalesTemperature from "../SelectorScalesTemperature/index";
+import SelectorScalesTemperature from "components/SelectorScalesTemperature/index";
 
 const Navigation = (props) => {
   return (

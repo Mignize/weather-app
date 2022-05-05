@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 import React from "react";
-import { getDay } from "../../../../../../services/getDates";
+import { getDay } from "services/getDates";
 
-import { useContextScales } from "../../../../../../context/scalesContext";
+import { useContextScales } from "context/scalesContext";
 import { WiRaindrop, WiHumidity, WiMoonset, WiSunset } from "react-icons/wi";
 import { RiWindyLine } from "react-icons/ri";
 
@@ -37,7 +37,7 @@ const InformationWeatherDays = (props) => {
         </div>
         <div className="conditions-information-days">
           <div className="temperature-information-days">
-            {dayInformation.temp_c}°
+            {scales === "°C" ? dayInformation.temp_c : dayInformation.temp_f}°
           </div>
           <img
             className="icon-information-days"
@@ -129,7 +129,10 @@ const InformationWeatherDays = (props) => {
         </div>
         <div className="conditions-information-days">
           <div className="temperature-information-days">
-            {nightInformation.temp_c}°
+            {scales === "°C"
+              ? nightInformation.temp_c
+              : nightInformation.temp_f}
+            °
           </div>
           <img
             className="icon-information-days"

@@ -1,5 +1,5 @@
 import axios from "axios";
-import settings from "../settings.js";
+import settings from "settings.js";
 
 export const getWeatherData = async (cityName) => {
   try {

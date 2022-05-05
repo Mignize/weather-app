@@ -1,10 +1,10 @@
 import React from "react";
-import "../../css/LoadingScreen.css";
+import "css/LoadingScreen.css";
 
 const LoadingScreen = () => {
   return (
     <>
-      <div className="weather rainy"></div>
+      <div className="rainy"></div>
     </>
   );
 };

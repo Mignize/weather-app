@@ -1,19 +1,19 @@
 import React, { useState, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
-import "../../../css/Search.css";
+import "css/Search.css";
 
-import getSearchResults from "../../../services/autocompleteSearch";
+import getSearchResults from "services/autocompleteSearch";
 import RecentResults from "./RecentResults";
 import AutocompleteResults from "./AutocompleteResults";
 
-import { useContextWeatherHour } from "../../../context/weatherHourContext";
+import { useContextWeatherHour } from "context/weatherHourContext";
 import {
   getWeatherForHour,
   getWeatherOfDays,
-} from "../../../services/weatherData";
-import { useContextWeatherDays } from "../../../context/weatherDaysContext";
+} from "services/weatherData";
+import { useContextWeatherDays } from "context/weatherDaysContext";
 
-import cookies from "../../../cookie";
+import cookies from "cookie.js";
 
 const Search = (props) => {
   const [searchResults, setSearchResults] = useState("");
